@@ -1,0 +1,16 @@
+:root{
+  --basic-violet: blueviolet;
+  --basic-dark-white: rgb(241, 235, 235);
+  --navbar-a-color: rgb(102, 101, 101);
+  --basic-light-green: #85DCB0;
+  --basic-dark-green: #41B3A3;
+}
+body{
+  margin: 0;
+  font-family: 'Eczar', serif;
+}
+#container{
+  max-width: 1300px;
+  margin: auto;
+  background-color: red;
+}
