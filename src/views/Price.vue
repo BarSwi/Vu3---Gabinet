@@ -1,5 +1,8 @@
+<script setup>
+    import subH2 from '../components/subH2.vue'
+</script>
 <template>
-    <h1>cena</h1>
+    <subH2 message="Cennik" />
 </template>
 
 <style>

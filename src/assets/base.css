@@ -4,6 +4,8 @@
   --navbar-a-color: rgb(102, 101, 101);
   --basic-light-green: #85DCB0;
   --basic-dark-green: #41B3A3;
+  --basic-orange: #E8A87C;
+  --basic-pink: #C38D9E;
 }
 body{
   margin: 0;
@@ -12,5 +14,6 @@ body{
 #container{
   max-width: 1300px;
   margin: auto;
+  font-size: 1rem;
   background-color: red;
 }

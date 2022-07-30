@@ -1,8 +1,11 @@
 import { createApp, VueElement } from 'vue'
 import App from './App.vue'
 import router from './router'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons'
 
-
+library.add(faPlus, faMinus)
 
 
 const app = createApp(App)
@@ -13,4 +16,6 @@ const app = createApp(App)
 app.use(router)
 
 
-app.mount('#app')
+app
+.component('fa', FontAwesomeIcon)
+.mount('#app')

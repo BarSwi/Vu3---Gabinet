@@ -1,7 +1,7 @@
 <template>
-<h2>
-{{message}}
-</h2>
+    <h2>
+        {{message}}
+    </h2>
 </template>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap');

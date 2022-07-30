@@ -1,14 +1,16 @@
 <script setup>
 import { onMounted } from 'vue';
 import { RouterLink, RouterView } from 'vue-router'
-import Top from './components/Top.vue'
+import Navbar from './components/Navbar.vue'
+import fontSizeChange from './components/fontSizeChange.vue'
 
 
 </script>
 
 <template>
-  <Top />
+  <Navbar />
   <RouterView/>
+  <fontSizeChange/>
 </template>
 
 <style>
