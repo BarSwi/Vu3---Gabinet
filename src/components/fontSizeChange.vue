@@ -1,28 +1,31 @@
 <template>
 <div id = "font_change_wrap">
-    <input type = "range" @input="changeFontSize(fontSize)" min = '16' max = '30' v-model="fontSize" class = 'slider' id = "font_change_slider" />
+    <input type = "range" @input="changeFontSize(fontSize)" min = '18' max = '24' v-model="fontSize" class = 'slider' id = "font_change_slider" />
 </div>
 </template>
 <style>
     #font_change_wrap{
-        width: 6.5vw;
+        width: 85px;
         padding: 5px;
         height: 35px;
-        opacity: 60%;
+        /* background-color: white; */
+        opacity: 40%;
         position: fixed;
         bottom: 5px;
         transition: 0.25s ease;
         left: 5px;
     }
-    #font_change_wrap:hover{
+    #font_change_wrap:hover, #font_change_wrap:focus-within{
         opacity: 100%;
+        outline: none;
     }
     .slider{
         width: 100%;
-        height: 5px;
+        height: 7px;
+        top: 20px;
+        display: block;
         position: relative;
         outline: none; 
-        -webkit-transition: .2s;
         transition: opacity .2s;
     }
     #font_change_slider:after{

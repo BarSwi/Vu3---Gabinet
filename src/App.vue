@@ -32,8 +32,6 @@ export default {
   },
   created() {
     document.documentElement.setAttribute('lang', 'pl')
-    // Root font-size
-    // document.documentElement.setAttribute('style','font-size: 25px')
   }
     // Global variable call
     // mounted: function(){
