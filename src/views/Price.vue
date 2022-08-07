@@ -1,8 +1,9 @@
 <script setup>
-    import subH2 from '../components/subH2.vue'
+    import { stringify } from 'postcss';
+import subH2 from '../components/subH2.vue'
 </script>
 <template>
-    <subH2 message="Cennik" />
+    <subH2>Cennik</subH2>
     <div id="container">
         <div id = "price">
             <table>
@@ -44,7 +45,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Analiza i pomoc w postępowaniach przygotowawczych (Sprawy kryminalne)
+                            * Analiza i pomoc w postępowaniach przygotowawczych (Sprawy kryminalne)
                         </td>
                         <td>
                             45 min
@@ -55,7 +56,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Analiza i pomoc w postępowaniach o wykroczenia w ruchu drogowym
+                            * Analiza i pomoc w postępowaniach o wykroczenia w ruchu drogowym
                         </td>
                         <td>
                             45 min

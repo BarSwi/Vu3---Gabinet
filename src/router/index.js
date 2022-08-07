@@ -5,6 +5,12 @@ import Services from '../views/Services.vue'
 import Contact from '../views/Contact.vue'
 import Appointment from '../views/Appointment.vue'
 const router = createRouter({
+  scrollBehavior(to, from, savedPosition) { 
+      return {
+        top: 0,
+        behavior: 'smooth',
+      }
+  },
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
   {
@@ -52,8 +58,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) =>{
-  document.title = `${to.meta.title}`;
+  document.title = `${to.meta.title}`; 
   next();
 })
-
 export default router

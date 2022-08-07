@@ -27,7 +27,6 @@ import fontSizeChange from './components/fontSizeChange.vue'
 export default {
   data () {
     return {
-      // data
     }
   },
   created() {

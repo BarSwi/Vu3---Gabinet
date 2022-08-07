@@ -1,6 +1,6 @@
 <template>
     <h2>
-        {{message}}
+        <slot></slot>
     </h2>
 </template>
 <style>
@@ -21,8 +21,6 @@ h2{
 </style>
 <script>
     export default{
-        props: {
-            message: String
-        }
+        name:   'subH2',
     }
 </script>

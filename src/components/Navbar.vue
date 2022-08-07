@@ -1,3 +1,7 @@
+<script setup>
+    import navbarBottom from './navbarBottom.vue'
+    import mobileNavbar from './mobileNavbar.vue'
+</script>
 <template>
     <div id = "navbar">
         <div id="navbar_cont">
@@ -8,24 +12,21 @@
                 <div id="links_not_mobile">
                     <ul>
                         <li v-for="(item, index) in Paths">
-                            <router-link @click="blur(index)" ref ="links" :to="{path:item.path}" :class = "routeName === item.name && routeName != 'Appointment' ? 'inactive_selected' : ''">{{item.span}}</router-link>
+                            <router-link :to="{path:item.path}" :class = "routeName === item.name && routeName != 'Appointment' ? 'inactive_selected' : ''">{{item.span}}</router-link>
                         </li>
                         <li>
                             <router-link to="/Umow-Wizyte" :class = "routeName === 'Appointment' ? 'inactive_selected_appointment' : ''">Umów Wizytę</router-link>
                         </li>
                     </ul>
                 </div>
-                <div id="mobile_burger_menu">
-
+                <div id="mobile-burger-menu">
+                    <fa icon = "bars" color = '#097969' size = '3x'/>
                 </div>
             </div>
         </div>
-        <div id = "navbar-bottom">
-            <div id="navbar-bottom-wrap">
-
-            </div>   
-        </div>  
     </div>
+    <navbarBottom />
+    <mobileNavbar />
 </template>
 <style>
 
@@ -35,13 +36,13 @@
 }
 #links_not_mobile{
     height: max-content;
-    padding: 20px 5px 20px 5px;
+    padding: 13px 5px 13px 5px;
 }
 #logo{
     font-size: 38px;
     font-weight: 900;
     height: max-content;
-    padding: 12px;
+    padding: 6px;
 }
 a{
     text-decoration: none;
@@ -53,6 +54,7 @@ a{
     display: flex;
     justify-content: space-between;
 }
+
 #navbar{
     overflow: hidden;
     width: 100vw;
@@ -64,26 +66,22 @@ a{
     top: 0;
     z-index: 5;
 }
-#navbar-bottom{
-    width: 100vw;
-    background-image: linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green));
-    padding: 10px;
-}
 #navbar ul{
     display: flex;
     margin: 0;
-    list-style-type: none;
     padding: 0;
 }
 #navbar li:last-of-type a{
-    color: white;
     transition:  .25s ease;
-    opacity: 85%;
+    background-color: rgba(162, 238, 91, 0.1);
+    opacity: 80%;
     border-radius: 20px;
-    background-image: linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green));
+    -webkit-box-shadow: 0px 0px 9px 0px var(--basic-dark-green);
+    -moz-box-shadow: 0px 0px 9px 0px var(--basic-dark-green);
+    box-shadow: 0px 0px 9px 0px var(--basic-dark-green);
 }
 
-#navbar a{
+#navbar #navbar_cont a{
     padding: 6px 10px 6px 10px;
     transition: .25s ease;
     position: relative;
@@ -108,18 +106,18 @@ a{
     width: 100%;
     background: var(--basic-dark-green);
 }
-#navbar li:not(:last-of-type) a:hover, #navbar li:not(:last-of-type) a:focus{
+#navbar li a:hover, #navbar li a:focus, #navbar li a:active{
     color: black !important;
-    opacity: 1;
-    outline: none;
-}
-#navbar li:last-of-type a:hover, #navbar li:last-of-type a:focus{
     opacity: 1;
     outline: none;
 }
 #navbar li:not(:last-of-type) a:hover:after, #navbar li:not(:last-of-type) a:focus:after{
     transform: scaleX(1);
+    -webkit-box-shadow: 0px 0px 11px 0px var(--basic-dark-green);
+    -moz-box-shadow: 0px 0px 11px 0px var(--basic-dark-green);
+    box-shadow: 0px 0px 11px 0px var(--basic-dark-green);
 }
+
 .inactive_selected{
     font-weight: 900;
     position: relative;
@@ -127,8 +125,16 @@ a{
     color: black !important;
 }
 .inactive_selected_appointment{
+    background-image: linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green));  
     opacity: 1 !important;
     pointer-events: none;
+    color: black !important;
+}
+#mobile-burger-menu{
+    display: none;
+    position: absolute;
+    top: 2px;
+    right: 40px;
 }
 .inactive_selected:before{
     content: '';
@@ -150,6 +156,15 @@ a{
     #links_not_mobile{
         display: none;
     }
+    #mobile-burger-menu{
+        display: block;
+    }
+    #navbar_cont{
+        width: 100%;
+    }
+    #navbar{
+        width: 100vw;
+    }
 }
 }
 
@@ -159,13 +174,11 @@ a{
 export default {
     data(){
         return{
-            Paths: [{path: '/', name: 'Home', span: 'Strona Główna'}, {path: '/Uslugi', name: 'Services', span: 'Usługi'}, {path: '/Cennik', name: 'Price', span: 'Cennik'}, {path: '/Kontakt', name: 'Contact', span: 'Kontakt'}]
+            Paths: [{path: '/', name: 'Home', span: 'Strona Główna'}, {path: '/Uslugi', name: 'Services', span: 'Usługi'}, {path: '/Cennik', name: 'Price', span: 'Cennik'}, {path: '/Kontakt', name: 'Contact', span: 'Kontakt'}],
+            hideBottomNavbar: false
         }
     },
     methods:{
-        blur(ID){
-            this.$refs.links[ID].$el.blur();
-        }
     },
     computed:{
         routeName(){
