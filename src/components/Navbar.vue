@@ -19,14 +19,14 @@
                         </li>
                     </ul>
                 </div>
-                <div id="mobile-burger-menu">
-                    <fa icon = "bars" color = '#097969' size = '3x'/>
-                </div>
+                <button @click = "toggleMobileMenuFunc" id="mobile-burger-menu" aria-label = "Open mobile menu">
+                    <fa icon = "bars" color = '#097969' size = '4x'/>
+                </button>
             </div>
         </div>
     </div>
     <navbarBottom />
-    <mobileNavbar />
+    <mobileNavbar @close-menu = "toggleMobileMenuFunc" :mobileMenuShown = showMobileMenu />
 </template>
 <style>
 
@@ -56,15 +56,15 @@ a{
 }
 
 #navbar{
-    overflow: hidden;
     width: 100vw;
+    max-width:100%;
     -webkit-box-shadow: 0px 0px 6px 1px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px 0px 6px 1px rgba(66, 68, 90, 1);
     box-shadow: 0px 0px 6px 1px rgba(66, 68, 90, 1);
     position: sticky;
     background-color: var(--basic-dark-white);
     top: 0;
-    z-index: 5;
+    z-index: 7;
 }
 #navbar ul{
     display: flex;
@@ -125,16 +125,25 @@ a{
     color: black !important;
 }
 .inactive_selected_appointment{
-    background-image: linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green));  
+    /* background-image: linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green));   */
+    background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
     opacity: 1 !important;
     pointer-events: none;
+    font-weight: 900;
     color: black !important;
 }
 #mobile-burger-menu{
     display: none;
     position: absolute;
-    top: 2px;
-    right: 40px;
+    top: 9px;
+    background-color: transparent;
+    border: none;
+    right: 12px;
+}
+#mobile-burger-menu:hover, #mobile-burger-menu:focus, #mobile-burger-menu:active{
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 .inactive_selected:before{
     content: '';
@@ -162,9 +171,6 @@ a{
     #navbar_cont{
         width: 100%;
     }
-    #navbar{
-        width: 100vw;
-    }
 }
 }
 
@@ -175,10 +181,18 @@ export default {
     data(){
         return{
             Paths: [{path: '/', name: 'Home', span: 'Strona Główna'}, {path: '/Uslugi', name: 'Services', span: 'Usługi'}, {path: '/Cennik', name: 'Price', span: 'Cennik'}, {path: '/Kontakt', name: 'Contact', span: 'Kontakt'}],
-            hideBottomNavbar: false
+            hideBottomNavbar: false,
+            showMobileMenu: false,
         }
     },
     methods:{
+        toggleMobileMenuFunc(){
+            this.showMobileMenu = !this.showMobileMenu
+            if(this.showMobileMenu==true){
+                document.documentElement.style.overflow =  "hidden"
+                }
+            else document.documentElement.removeAttribute('style')
+        }
     },
     computed:{
         routeName(){

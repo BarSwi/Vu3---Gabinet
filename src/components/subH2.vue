@@ -11,7 +11,8 @@ h2{
     display: block;
     margin: 20px auto 20px auto;
     padding: 30px;
-    background-image: linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green));
+    /* background-image: linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green)); */
+    background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;

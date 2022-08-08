@@ -15,24 +15,25 @@
         <div id="navbar-bottom-toggle">
 
         </div>
-        <button aria-label = 'Hide bottom menu' @click = "bottomNavbarToggle" id = 'hide-bottom-menu'><fa icon = 'circle-up' size ='2x' color = '#85DCB0'></fa></button>
+        <button aria-label = 'Hide bottom menu' @click = "bottomNavbarToggle" id = 'hide-bottom-menu'><fa icon = 'circle-up' size ='2x' color = '#41B3A3'></fa></button>
     </div>  
     <button v-if = "hideBottomNavbar" @click = "bottomNavbarToggle"  id = "show-bottom-menu" aria-label = 'Show bottom menu'><fa icon = 'circle-down' size = '2x' color = 'white'></fa></button>
 </template>
 <style>
     #navbar-bottom{
         width: 100vw;
+        max-width:100%;
         font-size: 15px;
         transition: transform .2s ease;
         transform-origin: top;
+        display: block;
         -webkit-box-shadow: 0px 0px 5px 1px var(--basic-light-green);
         -moz-box-shadow: 0px 0px 5px 1px var(--basic-light-green);
         box-shadow: 0px 0px 5px 1px var(--basic-light-green);
         position: sticky;
-        overflow: hidden;
         z-index: 4;
         top: 79px;
-        background-image: linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green));
+        background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
         padding: 12px 0 6px 0;
     }
     #navbar-bottom-wrap{
@@ -84,7 +85,8 @@
         left: 6px;
     }
     #show-bottom-menu{
-        background-image:  linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green));
+
+        background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
         border: none;
         position: fixed;
         z-index: 1; 
@@ -104,18 +106,13 @@
         transform: translateY(5px);
         outline: none;
     }
-    .hiden{
-        transform: translateY(-71px);
-    }
-    .shown{
-        transform: translateY(0);
-    }
     @media (max-width: 900px){
         #opening-time-information{
             display: none;
         }
         #navbar-bottom-wrap{
             justify-content: end;
+            margin-right: 20px;
         }
 
     }

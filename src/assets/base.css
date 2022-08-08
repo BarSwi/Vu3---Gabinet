@@ -5,6 +5,8 @@
   --navbar-a-color: rgb(102, 101, 101);
   --basic-light-green: #85DCB0;
   --basic-dark-green: #41B3A3;
+  
+  --basic-dark-green-2: #006700;
   --basic-orange: #f56d13;
   --basic-pink: #d42a60;
 
@@ -12,9 +14,16 @@
 *, :after, :before{
   box-sizing: border-box;
 }
+.hiden{
+  transform: translateY(-100%);
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+.shown{
+  transform: translateY(0);
+}
 html, body{
-  /* overflow: hidden; */
-  overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
   font-family: 'Eczar', serif;

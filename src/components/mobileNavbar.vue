@@ -4,26 +4,29 @@
     import FontSizeChange from './fontSizeChange.vue';
 </script>
 <template>
-    <div id = "mobile-nav-wrap">
+    <div :class = "mobileMenuShown ? 'shown' : 'hiden'" id = "mobile-nav-wrap">
         <div id = "mobile-nav-logo">
             <span id = 'text'>LOGO</span>
+            <button @click = "$emit('closeMenu')" id = "close-mobile-menu">
+                <fa icon = "xmark" size = '6x' color = 'white'></fa>
+            </button>
+            <!-- <FontSizeChange :isMobile = true /> -->
         </div>
         <div id = "mobile-links-wrap">
                     <ul>
                         <li v-for="(item, index) in Paths">
-                            <router-link :to="{path:item.path}" :class = "routeName === item.name ? 'inactive-selected-mobile' : ''">{{item.span}}</router-link>
+                            <router-link @click = "$emit('closeMenu')" :to="{path:item.path}" :class = "routeName === item.name ? 'inactive-selected-mobile' : ''">{{item.span}}</router-link>
                         </li>
                     </ul>
         </div>
         <div id = "mobile-bottom-wrap">
             <div id = "mobile-href-wrap">
                 <phoneNumber />
-                <contactHref />
+                <contactHref @click = "$emit('closeMenu')" />
             </div>
             <div id = "mobile-time-wrap">
                 <fa icon = 'clock' size = "1x" id = "navbar-mobile-svg-clock"></fa> <span class = "text">Wtorek - Czwartek, od 9:00 do 18:00 </span>
             </div>
-            <FontSizeChange :isMobile = true />
         </div>
 
     </div>
@@ -31,38 +34,59 @@
 <style>
     #mobile-nav-wrap{
         overflow: auto;
-        background-image:  linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green));
+        background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
         width: 100vw;
         color: white;
+        transition: transform .25s ease;
         align-items: center;
         letter-spacing: 1px;
         position: fixed;
         z-index: 500;
         top: 0;
+        left: 0;
         height: 100vh;
     }
+    #close-mobile-menu{
+        position: absolute;
+        top: 9px;
+        right: 10px;
+        background-color: transparent;
+        border: none;
+    }
+    #close-mobile-menu:hover, #close-mobile-menu:focus, #close-mobile-menu:active{
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
     #mobile-bottom-wrap{
-        margin-top: 100px;
+        margin-top: 60px;
+        padding-top: 40px;
+        -webkit-box-shadow: 0px -1px 1px 0px  var(--basic-light-green);;
+        -moz-box-shadow: 0px -1px 1px 0px  var(--basic-light-green);
+        box-shadow: 0px -1px 1px 0px var(--basic-light-green);
     }
     #mobile-nav-logo{
         text-align: center;
         height: 120px;
         margin: auto;
         font-size: 40px;
-        border-bottom: 1px solid grey;
+        -webkit-box-shadow: 0px 1px 1px 0px  var(--basic-light-green);
+        -moz-box-shadow: 0px 1px 1px 0px  var(--basic-light-green);
+        box-shadow: 0px 1px 1px 0px  var(--basic-light-green);
         position: relative;
     }
     #mobile-links-wrap{
-        margin: 100px auto 20px auto;
+        margin: 70px auto 20px auto;
         height: 370px;
     }
     #mobile-links-wrap ul{
         text-align: center;
-        font-size: 30px;
+        font-size: 22px;
         padding: 20px;
     }
-    #mobile-links-wrap ul li{
-        padding: 5px;
+    #mobile-links-wrap ul li:not(:last-of-type){
+        margin-bottom: 25px;
+        padding-bottom: 5px;
     }
     #mobile-links-wrap ul a:focus, #mobile-links-wrap ul a:hover, #mobile-links-wrap ul a:active{
         outline: none;
@@ -88,12 +112,12 @@
         font-weight: 900;
         letter-spacing: 3px;
     }
-    @media (max-width: 303px){
-        #navbar-mobile-svg-clock{
-            display: block;
-            margin: auto;
-        }
+    @media (min-width: 990px){
+    #mobile-nav-wrap{
+        display: none;
     }
+
+}
 </style>
 <script>
     export default {
@@ -101,13 +125,13 @@
         data(){
             return{
                 Paths: [{path: '/', name: 'Home', span: 'Strona Główna'}, {path: '/Uslugi', name: 'Services', span: 'Usługi'}, {path: '/Cennik', name: 'Price', span: 'Cennik'}, {path: '/Kontakt', name: 'Contact', span: 'Kontakt'}, {path: 'Umow-Wizyte', name: 'Appointment', span: 'Umów Wizytę'}],
-                hideBottomNavbar: false
             }
         },
+        props: ['mobileMenuShown'],
         computed:{
             routeName(){
             return this.$route.name
             },
-        }
+        },
     }
 </script>

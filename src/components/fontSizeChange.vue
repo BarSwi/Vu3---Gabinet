@@ -48,7 +48,9 @@
         height: 35px;
         opacity: 40%;
         transition: 0.25s ease;
-        margin: auto;
+        position: relative;
+        bottom: 0px;
+        left: 5px;
     }
     @media (max-width: 990px){
         #font_change_wrap{

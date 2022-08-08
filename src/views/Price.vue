@@ -3,8 +3,8 @@
 import subH2 from '../components/subH2.vue'
 </script>
 <template>
-    <subH2>Cennik</subH2>
     <div id="container">
+        <subH2>Cennik</subH2>
         <div id = "price">
             <table>
                 <thead>
@@ -76,11 +76,14 @@ import subH2 from '../components/subH2.vue'
                             500 zł
                         </td>
                     </tr>
+
                 </tbody>
             </table>
         </div>
-        <br>
-        <p id = "price_disclaimer">
+        <p id = "detective-services-price">
+            <a href = "https://agencja-contra.pl/cennik/" target = "_blank">CENNIK USŁUG DETEKTYWISTYCZNYCH</a> 
+        </p>
+        <p id = "price-disclaimer">
            * Cena analizy i pomocy w postepowaniu, może się różnić w zależności od ilości zebranych materiałow - akt postępowania.
         </p>
     </div>
@@ -89,10 +92,10 @@ import subH2 from '../components/subH2.vue'
 <style>
     #price{
         display: block;
-        overflow-X:auto;
         width: 100%;
+        overflow-x: auto;
     }
-    table{
+    #price table{
         border-collapse: collapse;
         width: 100%;
         display: table;
@@ -100,42 +103,69 @@ import subH2 from '../components/subH2.vue'
         box-sizing: border-box;
         white-space: nowrap;
     }
-    thead{
+    #price thead{
         font-size: 1.1rem;
     }
-    tbody tr{
+    #price tbody tr{
         -webkit-box-shadow: 0px -3px 2px -1px rgba(66, 68, 90, 1);
         -moz-box-shadow: 0px -3px 2px -1px rgba(66, 68, 90, 1);
         box-shadow: 0px -3px 2px -1px rgba(66, 68, 90, 1);
     }
-    td, th{
+    #price tr td, th{
         text-align: left;
         height: 80px;
         vertical-align: center;
         padding: 0.1rem 30px 0.1rem 10px;
     }
-    tbody tr:nth-child(odd){
+    #price tbody tr:nth-child(odd){
         background-color: var(--basic-dark-white);
     }
-    #price_disclaimer{
+    #price-disclaimer, #detective-services-price{
         text-align: center;
+        margin-top: 40px;
+    }
+    #detective-services-price{
+        padding: 10px;
+        font-weight: 900;
+        margin: 30px auto 0 auto;
+        width: max-content;
+        display: block;
+        font-size: 1.1rem;
+    }
+    #detective-services-price a{
+        overflow-wrap: break-word;
+        background-color: var(--basic-light-green);
+        width: 420px;
+        display: block;
+        transition: background-color .2s ease;
+        padding: 10px 20px 10px 20px;
+        border-radius: 25px;
+    }
+    #detective-services-price a:hover, #detective-services-price a:focus, #detective-services-price a:active{
+        outline: none;
+        border: none;
+        background-color: var(--basic-dark-green);
     }
     @media (max-width: 1100px){
-        table{
+        #price table{
             table-layout: fixed;
             width: 900px;
             white-space: unset;
         }
-        td, th:not(:first-of-type){
+        #price td, th:not(:first-of-type){
             width: 25%;
-            text-align: center;
+            text-align: center !important;
         }
-        td:first-of-type{
+        #price td:first-of-type{
             width: 35%;
-            text-align: left
+            text-align: left !important;
         }
-        th:last-of-type{
-            text-align: center;
+    }
+    @media (max-width: 460px){
+        #detective-services-price a{
+            width: 90vw;
+            
+            font-size: 0.80rem;
         }
     }
 </style>
