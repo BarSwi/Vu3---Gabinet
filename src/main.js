@@ -3,9 +3,9 @@ import App from './App.vue'
 import router from './router'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
-import {faBars, faPhoneFlip, faEnvelope, faClock, faCircleUp, faCircleDown, faXmark} from '@fortawesome/free-solid-svg-icons'
+import {faBars, faPhoneFlip, faEnvelope, faClock, faCircleUp, faCircleDown, faXmark, faAngleUp, faRectangleList, faLocationDot} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faBars, faPhoneFlip, faEnvelope, faClock, faCircleUp, faCircleDown, faXmark)
+library.add(faBars, faPhoneFlip, faEnvelope, faClock, faCircleUp, faCircleDown, faXmark, faAngleUp, faRectangleList, faLocationDot)
 
 
 const app = createApp(App)

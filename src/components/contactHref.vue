@@ -1,6 +1,6 @@
 <template>
     <div id = "contact-href-wrap">
-        <router-link to =  "/Kontakt"  id = "contact-href"><fa icon = 'envelope' size = '1x'  id = 'svg-envelope'></fa><span class = 'text'>Zadaj pytanie</span></router-link>
+        <router-link to =  "/Kontakt"  id = "contact-href"><fa icon = 'rectangle-list' size = '1x'  id = 'svg-envelope'></fa><span class = 'text'>Zadaj pytanie</span></router-link>
     </div>
 </template>
 
@@ -8,13 +8,13 @@
     #contact-href{
         border-radius: 25px;
         font-size: 20px;
+        height: 40px;
         width: max-content;
         background-color: var(--basic-pink);
         opacity: 80%;
         transition : .2s ease-in-out;
-        padding: 5px 10px 5px 10px;
+        padding: 7px 10px 0px 10px;
         position: relative;
-        bottom: 4px;
     }
     #contact-href:hover, #contact-href:focus{
         outline: none;

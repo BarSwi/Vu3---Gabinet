@@ -2,9 +2,9 @@
 <div v-if = "!isMobile" id = "font_change_wrap">
     <input type = "range" min = '18' max = '24' v-model="fontSize" class = 'slider' id = "font_change_slider" />
 </div>
-<div v-if="isMobile" id = "font-change-wrap-mobile">
+<!-- <div v-if="isMobile" id = "font-change-wrap-mobile">
     <input type = "range" min = '18' max = '24' v-model="fontSize" class = 'slider' id = "font-change-slider-mobile" />
-</div>
+</div> -->
 </template>
 <style>
     #font_change_wrap{

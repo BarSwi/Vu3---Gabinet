@@ -1,9 +1,11 @@
 <script setup>
-    import { stringify } from 'postcss';
+    import { createDOMCompilerError } from '@vue/compiler-dom';
+import { stringify } from 'postcss';
 import subH2 from '../components/subH2.vue'
+import ContactDiv from '../components/contactDiv.vue';
 </script>
 <template>
-    <div id="container">
+    <div id="container">    
         <subH2>Cennik</subH2>
         <div id = "price">
             <table>
@@ -86,6 +88,7 @@ import subH2 from '../components/subH2.vue'
         <p id = "price-disclaimer">
            * Cena analizy i pomocy w postepowaniu, może się różnić w zależności od ilości zebranych materiałow - akt postępowania.
         </p>
+        <ContactDiv />
     </div>
 </template>
 
@@ -122,7 +125,7 @@ import subH2 from '../components/subH2.vue'
     }
     #price-disclaimer, #detective-services-price{
         text-align: center;
-        margin-top: 40px;
+        margin: 40px 0 40px 0;
     }
     #detective-services-price{
         padding: 10px;
@@ -134,17 +137,18 @@ import subH2 from '../components/subH2.vue'
     }
     #detective-services-price a{
         overflow-wrap: break-word;
-        background-color: var(--basic-light-green);
+        background-color: var(--basic-dark-green);
         width: 420px;
+        min-width: 200px;
         display: block;
         transition: background-color .2s ease;
-        padding: 10px 20px 10px 20px;
+        padding: 20px;
         border-radius: 25px;
     }
     #detective-services-price a:hover, #detective-services-price a:focus, #detective-services-price a:active{
         outline: none;
         border: none;
-        background-color: var(--basic-dark-green);
+        background-color: var(--basic-light-green);
     }
     @media (max-width: 1100px){
         #price table{
@@ -170,5 +174,8 @@ import subH2 from '../components/subH2.vue'
     }
 </style>
 <script>
+export default {
+
+}
 
 </script>

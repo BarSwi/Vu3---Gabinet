@@ -8,11 +8,11 @@
         border-radius: 25px;
         font-size: 20px;
         width: max-content;
+        height: 40px;
         opacity: 80%;
         transition : .2s ease-in-out;
-        padding: 5px 10px 5px 10px;
+        padding: 7px 10px 0px 10px;
         position: relative;
-        bottom: 4px;
         background-color: var(--basic-orange);
     }
     #phone-href:hover, #phone-href:focus{
@@ -20,8 +20,8 @@
         opacity: 1;
     }
     #navbar-bottom-svg-phone{
-        margin-right: 10px;
-        margin-left: 10px;
+        margin-right: 5px;
+        margin-left: 5px;
     }
     #phone-href-wrap{
         color: white;

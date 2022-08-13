@@ -4,37 +4,39 @@
 </script>
 
 <template>
-    <div id = "navbar-bottom" :class = "hideBottomNavbar ? 'hiden' : 'shown'">
-        <div id="navbar-bottom-wrap">
-            <phoneNumber />
-            <contactHref />
-            <div id = "opening-time-information">
-                <fa icon = 'clock' size = "2x" id = "navbar-bottom-svg-clock"></fa> <span class = "text">Wtorek - Czwartek, od 9:00 do 18:00 </span>
-            </div>
-        </div>
-        <div id="navbar-bottom-toggle">
+        <div id = "navbar-bottom" :class = "hideBottomNavbar ? 'hiden' : 'shown'">
+            <div id="navbar-bottom-wrap">
+                <div id = "opening-time-information">
+                    <fa icon = 'clock' size = "2x" id = "navbar-bottom-svg-clock"></fa> <span class = "text">Wtorek - Czwartek, od 9:00 do 18:00 </span>
+                </div>
+                <phoneNumber v-if="!hideBottomNavbar" />
+                <contactHref v-if="!hideBottomNavbar" />
 
-        </div>
-        <button aria-label = 'Hide bottom menu' @click = "bottomNavbarToggle" id = 'hide-bottom-menu'><fa icon = 'circle-up' size ='2x' color = '#41B3A3'></fa></button>
-    </div>  
-    <button v-if = "hideBottomNavbar" @click = "bottomNavbarToggle"  id = "show-bottom-menu" aria-label = 'Show bottom menu'><fa icon = 'circle-down' size = '2x' color = 'white'></fa></button>
+            </div>
+            <div id="navbar-bottom-toggle">
+
+            </div>
+            <button v-if = "!hideBottomNavbar" aria-label = 'Hide bottom menu' @click = "bottomNavbarToggle" id = 'hide-bottom-menu'><fa icon = 'circle-up' size ='2x' color = '#10784b'></fa></button>
+        </div>  
+        <button v-if = "hideBottomNavbar" @click = "bottomNavbarToggle"  id = "show-bottom-menu" aria-label = 'Show bottom menu'><fa icon = 'circle-down' size = '2x' color = 'white'></fa></button>
 </template>
 <style>
     #navbar-bottom{
         width: 100vw;
         max-width:100%;
         font-size: 15px;
-        transition: transform .2s ease;
+        min-width:260px;
+        transition: transform .2s ease, opacity .2s ease;
         transform-origin: top;
         display: block;
-        -webkit-box-shadow: 0px 0px 5px 1px var(--basic-light-green);
-        -moz-box-shadow: 0px 0px 5px 1px var(--basic-light-green);
-        box-shadow: 0px 0px 5px 1px var(--basic-light-green);
+        -webkit-box-shadow: 0px 0px 5px 1px var(--basic-dark-green);
+        -moz-box-shadow: 0px 0px 5px 1px var(--basic-dark-green);
+        box-shadow: 0px 0px 5px 1px var(--basic-dark-green);
         position: sticky;
-        z-index: 4;
-        top: 79px;
-        background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
-        padding: 12px 0 6px 0;
+        z-index: 15;
+        top: 87px;
+        background-image:  linear-gradient(to left, var(--basic-dark-green), var(--basic-dark-green-2));
+        padding: 12px 0 0px 0;
     }
     #navbar-bottom-wrap{
         display: flex;
@@ -65,6 +67,7 @@
         height: max-content;
         width: max-content;
         position: relative;
+        padding-bottom: 10px;
         font-size: 20px;
     }
     #opening-time-information .text{
@@ -81,12 +84,12 @@
         border-radius: 50px;
         padding: 5px;
         transition: .2s ease;
-        top: 12px;
+        top: 13px;
         left: 6px;
     }
     #show-bottom-menu{
 
-        background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
+        background-image:  linear-gradient(to left, var(--basic-dark-green), var(--basic-dark-green-2));
         border: none;
         position: fixed;
         z-index: 1; 
@@ -94,7 +97,7 @@
         transition: .2s ease;
         border-radius: 50px;
         left: 5px;
-        top: 70px;
+        top: 77px;
     }
     #hide-bottom-menu:hover, #hide-bottom-menu:focus{
         cursor: pointer;
@@ -113,6 +116,7 @@
         #navbar-bottom-wrap{
             justify-content: end;
             margin-right: 20px;
+            padding-bottom: 10px;
         }
 
     }
@@ -125,26 +129,24 @@
         data(){
             return{
                 hideBottomNavbar: false,           
-                bottomNavbarUserInteraction: false
+                bottomNavbarUserInteraction: false,
                 }
         },
-        created(){
-            window.addEventListener('scroll', this.bottomNavbarScrollToggle)
-        },
-        destroyed(){
-            window.removeEventListener('scroll', this.bottomNavbarScrollToggle)
-        },
+        props: ['scrollValue'],
         methods:{
             bottomNavbarToggle(){
                 this.hideBottomNavbar = !this.hideBottomNavbar
                 this.bottomNavbarUserInteraction = true
             },
-            bottomNavbarScrollToggle(){
-                if(window.scrollY > 75 && this.hideBottomNavbar == false && this.bottomNavbarUserInteraction == false){
+        },
+        watch: {
+            scrollValue(value){
+                if(value > 65 && this.hideBottomNavbar == false && this.bottomNavbarUserInteraction == false){
                     this.hideBottomNavbar = true
                 }
-                else if(window.scrollY <= 75 && this.hideBottomNavbar ==  true && this.bottomNavbarUserInteraction == false){
-                    this.hideBottomNavbar = false                }
+                else if(value <= 65 && this.hideBottomNavbar ==  true && this.bottomNavbarUserInteraction == false){
+                    this.hideBottomNavbar = false    
+                }
             }
         }
     }

@@ -36,15 +36,18 @@
         overflow: auto;
         background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
         width: 100vw;
+        max-width: 100%;
+        min-width: 260px;
         color: white;
-        transition: transform .25s ease;
+        transition: opacity .25s ease, transform .25s ease;
         align-items: center;
         letter-spacing: 1px;
         position: fixed;
         z-index: 500;
         top: 0;
         left: 0;
-        height: 100vh;
+        height: 100%;
+        
     }
     #close-mobile-menu{
         position: absolute;
@@ -61,28 +64,28 @@
     #mobile-bottom-wrap{
         margin-top: 60px;
         padding-top: 40px;
-        -webkit-box-shadow: 0px -1px 1px 0px  var(--basic-light-green);;
-        -moz-box-shadow: 0px -1px 1px 0px  var(--basic-light-green);
-        box-shadow: 0px -1px 1px 0px var(--basic-light-green);
+        -webkit-box-shadow: 0px -1px 1px 0px  white;
+        -moz-box-shadow: 0px -1px 1px 0px  white;
+        box-shadow: 0px -1px 1px 0px white;
     }
     #mobile-nav-logo{
         text-align: center;
         height: 120px;
         margin: auto;
         font-size: 40px;
-        -webkit-box-shadow: 0px 1px 1px 0px  var(--basic-light-green);
-        -moz-box-shadow: 0px 1px 1px 0px  var(--basic-light-green);
-        box-shadow: 0px 1px 1px 0px  var(--basic-light-green);
+        -webkit-box-shadow: 0px 1px 1px 0px  white;
+        -moz-box-shadow: 0px 1px 1px 0px  white;
+        box-shadow: 0px 1px 1px 0px  white;
         position: relative;
     }
     #mobile-links-wrap{
-        margin: 70px auto 20px auto;
+        margin: 70px auto 70px auto;
         height: 370px;
     }
     #mobile-links-wrap ul{
         text-align: center;
         font-size: 22px;
-        padding: 20px;
+        padding: 45px;
     }
     #mobile-links-wrap ul li:not(:last-of-type){
         margin-bottom: 25px;
@@ -110,6 +113,7 @@
     }
     .inactive-selected-mobile{
         font-weight: 900;
+        pointer-events: none;
         letter-spacing: 3px;
     }
     @media (min-width: 990px){

@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <navbarBottom />
+    <navbarBottom :scrollValue = "scrollValue" />
     <mobileNavbar @close-menu = "toggleMobileMenuFunc" :mobileMenuShown = showMobileMenu />
 </template>
 <style>
@@ -42,7 +42,7 @@
     font-size: 38px;
     font-weight: 900;
     height: max-content;
-    padding: 6px;
+    padding: 10px;
 }
 a{
     text-decoration: none;
@@ -58,13 +58,15 @@ a{
 #navbar{
     width: 100vw;
     max-width:100%;
+    min-width:260px;
     -webkit-box-shadow: 0px 0px 6px 1px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px 0px 6px 1px rgba(66, 68, 90, 1);
     box-shadow: 0px 0px 6px 1px rgba(66, 68, 90, 1);
     position: sticky;
     background-color: var(--basic-dark-white);
     top: 0;
-    z-index: 7;
+    padding: 10px;
+    z-index: 16;
 }
 #navbar ul{
     display: flex;
@@ -76,9 +78,9 @@ a{
     background-color: rgba(162, 238, 91, 0.1);
     opacity: 80%;
     border-radius: 20px;
-    -webkit-box-shadow: 0px 0px 9px 0px var(--basic-dark-green);
-    -moz-box-shadow: 0px 0px 9px 0px var(--basic-dark-green);
-    box-shadow: 0px 0px 9px 0px var(--basic-dark-green);
+    -webkit-box-shadow: 0px 0px 9px 0px var(--basic-dark-green-2);
+    -moz-box-shadow: 0px 0px 9px 0px var(--basic-dark-green-2);
+    box-shadow: 0px 0px 9px 0px var(--basic-dark-green-2);
 }
 
 #navbar #navbar_cont a{
@@ -98,13 +100,14 @@ a{
     transform-origin: center;
     position: absolute;
     height: 2px;
-    bottom: 3px;
+    bottom: 0px;
     margin: 0 auto;
     border-radius: 2px;
     left: 0;
     right: 0;
     width: 100%;
-    background: var(--basic-dark-green);
+    /* background: var(--basic-dark-green-2); */
+    background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
 }
 #navbar li a:hover, #navbar li a:focus, #navbar li a:active{
     color: black !important;
@@ -113,9 +116,6 @@ a{
 }
 #navbar li:not(:last-of-type) a:hover:after, #navbar li:not(:last-of-type) a:focus:after{
     transform: scaleX(1);
-    -webkit-box-shadow: 0px 0px 11px 0px var(--basic-dark-green);
-    -moz-box-shadow: 0px 0px 11px 0px var(--basic-dark-green);
-    box-shadow: 0px 0px 11px 0px var(--basic-dark-green);
 }
 
 .inactive_selected{
@@ -125,9 +125,8 @@ a{
     color: black !important;
 }
 .inactive_selected_appointment{
-    /* background-image: linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green));   */
-    background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
-    opacity: 1 !important;
+    background-color: rgba(162, 238, 91, 0.4) !important;
+    opacity: 1;
     pointer-events: none;
     font-weight: 900;
     color: black !important;
@@ -135,7 +134,7 @@ a{
 #mobile-burger-menu{
     display: none;
     position: absolute;
-    top: 9px;
+    top: 16px;
     background-color: transparent;
     border: none;
     right: 12px;
@@ -149,13 +148,13 @@ a{
     content: '';
     position: absolute;
     height: 2px;
-    bottom: 3px;
+    bottom: 0px;
     margin: 0 auto;
     border-radius: 2px;
     left: 0;
     right: 0;
     width: 100%;
-    background: var(--basic-dark-green);
+    background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
 }
 @media (max-width: 1330px){
     #navbar_cont{
@@ -181,10 +180,10 @@ export default {
     data(){
         return{
             Paths: [{path: '/', name: 'Home', span: 'Strona Główna'}, {path: '/Uslugi', name: 'Services', span: 'Usługi'}, {path: '/Cennik', name: 'Price', span: 'Cennik'}, {path: '/Kontakt', name: 'Contact', span: 'Kontakt'}],
-            hideBottomNavbar: false,
             showMobileMenu: false,
         }
     },
+    props: ['scrollValue'],
     methods:{
         toggleMobileMenuFunc(){
             this.showMobileMenu = !this.showMobileMenu

@@ -17,8 +17,13 @@ h2{
     -webkit-background-clip: text;
     color: transparent;
     position: relative;
-    font-size: 2.3rem;
+    font-size: 3rem;
 }
+  @media (max-width: 500px){
+    h2{
+      font-size: 45px;
+    }
+  }
 </style>
 <script>
     export default{
