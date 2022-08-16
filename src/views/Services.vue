@@ -3,7 +3,7 @@
 </script>
 <template>
 <SubH2>Usługi</SubH2>
-<div id="container">
+<div id="container-main">
     
 </div>
 </template>

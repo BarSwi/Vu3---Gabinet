@@ -4,8 +4,8 @@
     import ContactForm from "../components/contactForm.vue";
 </script>
 <template>
-    <div id = "container">
-        <SubH2>Kontakt</SubH2>
+    <SubH2>Kontakt</SubH2>
+    <div class = "container-main">
         <div id = "row-contact">
             <div id = "row-contact-left">
                 <div class = "row-contact-left-informations" id = "row-contact-left-company">
@@ -99,14 +99,8 @@
     .row-contact-left-informations{
         min-width: 300px;
         width: 300px;
-        margin: 20px;
+        margin: 10px 20px 10px 20px;
     }
-@media (max-width: 500px){
-    .row-contact-left-informations{
-        padding: 20px 0 20px 0;
-        margin: 20px 0 20px 0;
-    }
-}
 @media (max-width: 757px){
     #row-contact-left{
         justify-content: flex-start;

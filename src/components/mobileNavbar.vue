@@ -69,8 +69,9 @@
         box-shadow: 0px -1px 1px 0px white;
     }
     #mobile-nav-logo{
-        text-align: center;
+        text-align: left;
         height: 120px;
+        padding: 35px 0 0 20px;
         margin: auto;
         font-size: 40px;
         -webkit-box-shadow: 0px 1px 1px 0px  white;

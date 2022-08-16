@@ -4,6 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import fontSizeChange from './components/fontSizeChange.vue'
 import ScrollUpBtn from './components/scrollUpBtn.vue'
+import Footer from './components/Footer.vue'
 
 
 </script>
@@ -13,6 +14,7 @@ import ScrollUpBtn from './components/scrollUpBtn.vue'
   <RouterView/>
   <fontSizeChange/>
   <ScrollUpBtn :scrollValue = 'windowScrollValue' />
+  <Footer />
 </template>
 
 <style>

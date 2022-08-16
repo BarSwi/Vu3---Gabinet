@@ -9,6 +9,7 @@
 #scroll-wrap{
     position: fixed;
     opacity: 60%;
+    z-index: 1;
     bottom: 10px;
     transition: transform .2s ease, opacity .2s ease;
     right: 15px;

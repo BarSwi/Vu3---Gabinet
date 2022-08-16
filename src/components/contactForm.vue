@@ -138,6 +138,9 @@
         border-bottom: 2px solid white;
         position: absolute;
     }
+    #send-message-form-checkbox-label span{
+        display: block;
+    }
     #send-message-form-checkbox-label span:after{
         content: '';
         background-color: transparent;

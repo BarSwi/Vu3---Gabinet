@@ -1,6 +1,9 @@
 <template>
     <h2>
-        <slot></slot>
+    <span id = 'h2-text'>
+      <slot></slot>
+    </span>
+
     </h2>
 </template>
 <style>
@@ -9,19 +12,26 @@ h2{
     font-family: 'Lobster Two', sans-serif;
     text-align:center;
     display: block;
-    margin: 20px auto 20px auto;
-    padding: 30px;
-    /* background-image: linear-gradient(to left, var(--basic-dark-green), var(--basic-light-green)); */
-    background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
-    background-clip: text;
-    -webkit-background-clip: text;
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 50px 0 50px 0;
     color: transparent;
+    padding: 20px 0 20px 0;
+    background-color: rgba(38, 146, 28, 0.1);
+    width: 100%;
     position: relative;
     font-size: 3rem;
+}
+#h2-text{
+    background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
+    background-clip: text;
+    display: block;
+    -webkit-background-clip: text;
 }
   @media (max-width: 500px){
     h2{
       font-size: 45px;
+  
     }
   }
 </style>

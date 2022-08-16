@@ -5,8 +5,8 @@ import subH2 from '../components/subH2.vue'
 import ContactDiv from '../components/contactDiv.vue';
 </script>
 <template>
-    <div id="container">    
-        <subH2>Cennik</subH2>
+    <subH2>Cennik</subH2>
+    <div class="container-main">    
         <div id = "price">
             <table>
                 <thead>
@@ -88,8 +88,8 @@ import ContactDiv from '../components/contactDiv.vue';
         <p id = "price-disclaimer">
            * Cena analizy i pomocy w postepowaniu, może się różnić w zależności od ilości zebranych materiałow - akt postępowania.
         </p>
-        <ContactDiv />
     </div>
+    <ContactDiv />
 </template>
 
 <style>
@@ -148,7 +148,7 @@ import ContactDiv from '../components/contactDiv.vue';
     #detective-services-price a:hover, #detective-services-price a:focus, #detective-services-price a:active{
         outline: none;
         border: none;
-        background-color: var(--basic-light-green);
+        background-color: var(--basic-dark-green-2);
     }
     @media (max-width: 1100px){
         #price table{

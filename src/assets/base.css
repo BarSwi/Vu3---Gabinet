@@ -3,7 +3,7 @@
   --basic-violet: blueviolet;
   --basic-dark-white: rgb(248, 242, 242);
   --navbar-a-color: rgb(102, 101, 101);
-  --basic-dark-green: #84cdca;
+  --basic-dark-green: rgb(132, 205, 202);
   --basic-light-green: #d7f898 ;
   --basic-dark-green-2: #10784b ; 
   --basic-dark-green-3: #0b440b;
@@ -26,6 +26,7 @@
   transform: translateY(0);
 }
 html, body{
+  -webkit-font-smoothing: antialiased !important;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -39,26 +40,27 @@ a:link,a:visited{
 	text-decoration: none;
 	color: var(--link-color);
 }
-#container{
+.container-main{
   min-width:260px;
   transition: font-size .25s ease;
   width: 1300px;
   margin: 0 auto 0 auto;
   font-size: 1rem;
+
 }
 
 @media (max-width: 1370px){
-  #container{
+  .container-main{
     width: 1100px;
     font-size: 0.9rem;
   }
 }
 @media (max-width: 1100px){
-  #container{
+  .container-main{
     width: 95vw;
   }
   @media (max-width: 500px){
-    #container{
+    .container-main{
       font-size: 18px;
     }
   }

@@ -9,7 +9,7 @@
                 LOGO
             </div>
             <div id = "right_navbar_cont">
-                <div id="links_not_mobile">
+                <div id="links-not-mobile">
                     <ul>
                         <li v-for="(item, index) in Paths">
                             <router-link :to="{path:item.path}" :class = "routeName === item.name && routeName != 'Appointment' ? 'inactive_selected' : ''">{{item.span}}</router-link>
@@ -31,14 +31,17 @@
 <style>
 
 
-#links_not_mobile, #logo{
+#links-not-mobile, #navbar_cont #logo{
     float: left;
 }
-#links_not_mobile{
+#links-not-mobile{
     height: max-content;
     padding: 13px 5px 13px 5px;
 }
-#logo{
+#links-not-mobile li{
+    
+}
+#navbar_cont #logo{
     font-size: 38px;
     font-weight: 900;
     height: max-content;
@@ -49,6 +52,9 @@ a{
     color: black;
 }
 #navbar_cont{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     max-width: 1200px;
     margin: 0 auto 0 auto   ;
     display: flex;
@@ -74,7 +80,6 @@ a{
     padding: 0;
 }
 #navbar li:last-of-type a{
-    transition:  .25s ease;
     background-color: rgba(162, 238, 91, 0.1);
     opacity: 80%;
     border-radius: 20px;
@@ -85,7 +90,6 @@ a{
 
 #navbar #navbar_cont a{
     padding: 6px 10px 6px 10px;
-    transition: .25s ease;
     position: relative;
     display: block;
     color: var(--navbar-a-color);
@@ -160,8 +164,8 @@ a{
     #navbar_cont{
     width: 1000px;
     }
-@media (max-width: 990px){
-    #links_not_mobile{
+@media (max-width: 1007px){
+    #links-not-mobile{
         display: none;
     }
     #mobile-burger-menu{

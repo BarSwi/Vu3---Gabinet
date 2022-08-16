@@ -4,13 +4,13 @@
 </script>
 
 <template>
-        <div id = "navbar-bottom" :class = "hideBottomNavbar ? 'hiden' : 'shown'">
+        <div id = "navbar-bottom" :class = "hideBottomNavbar ? 'hiden' : 'shown'" :aria-hidden = 'hideBottomNavbar'>
             <div id="navbar-bottom-wrap">
                 <div id = "opening-time-information">
                     <fa icon = 'clock' size = "2x" id = "navbar-bottom-svg-clock"></fa> <span class = "text">Wtorek - Czwartek, od 9:00 do 18:00 </span>
                 </div>
-                <phoneNumber v-if="!hideBottomNavbar" />
-                <contactHref v-if="!hideBottomNavbar" />
+                <phoneNumber  />
+                <contactHref />
 
             </div>
             <div id="navbar-bottom-toggle">
