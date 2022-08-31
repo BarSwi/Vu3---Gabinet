@@ -57,7 +57,8 @@ a:link,a:visited{
 }
 @media (max-width: 1100px){
   .container-main{
-    width: 95vw;
+    width: 96vw;
+    padding: 0vw 2vw 0 2vw;
   }
   @media (max-width: 500px){
     .container-main{

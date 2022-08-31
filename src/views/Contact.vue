@@ -4,49 +4,51 @@
     import ContactForm from "../components/contactForm.vue";
 </script>
 <template>
-    <SubH2>Kontakt</SubH2>
-    <div class = "container-main">
-        <div id = "row-contact">
-            <div id = "row-contact-left">
-                <div class = "row-contact-left-informations" id = "row-contact-left-company">
-                    <span class = 'header' id = "company-name">Nazwa firmy</span>
-                    <ul>
-                        <li>
-                            NIP:
-                        </li>
-                        <li>
-                            REGON:
-                        </li>
-                        <li>
-                            KRS: 
-                        </li>
-                    </ul>
+    <main>
+        <SubH2>Kontakt</SubH2>
+        <div class = "container-main">
+            <div id = "row-contact">
+                <div id = "row-contact-left">
+                    <div class = "row-contact-left-informations" id = "row-contact-left-company">
+                        <span class = 'header' id = "company-name">Nazwa firmy</span>
+                        <ul>
+                            <li>
+                                NIP:
+                            </li>
+                            <li>
+                                REGON:
+                            </li>
+                            <li>
+                                KRS: 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class = "row-contact-left-informations" id = "row-contact-left-company">
+                        <span class = 'header' id = "open-time">Godziny otwarcia poradni</span>
+                        <p>Wtorek, Środa, Czwartek, od 9:00 do 18:00</p>
+                    </div>
+                    <div class = 'row-contact-left-informations' id = 'row-contact-left-phone'>
+                        <span class = "header" id = 'phone'>Kontakt telefoniczny</span>
+                        <p><a href = "tel:+48605342428"><span id = 'phone-icon'><fa  icon = 'phone-flip' size = '1x' style = "transform: rotate(-220deg)" /></span>605 342 428</a></p>
+                    </div>
+                    <div class = 'row-contact-left-informations' id = 'row-contact-left-email'>
+                        <span class = 'header' id = 'email'>Kontakt mailowy</span>
+                        <p><a href = "mailto:przykładowy_email@gmail.com"><span id = 'envelope-icon'><fa icon = "envelope" size = '1x' /></span>Przykładowy_email@gmail.com</a></p>
+                    </div>
+                    <div class = 'row-contact-left-informations' id = 'row-contact-left-address'>
+                        <span class = 'header' id = 'address'>Adres gabinetu</span>
+                        <p><span id = 'location-icon'><fa icon = 'location-dot'></fa></span>Katowice ul. Teatralna 6 Lokal 3</p>
+                    </div>
                 </div>
-                <div class = "row-contact-left-informations" id = "row-contact-left-company">
-                    <span class = 'header' id = "open-time">Godziny otwarcia poradni</span>
-                    <p>Wtorek, Środa, Czwartek, od 9:00 do 18:00</p>
-                </div>
-                <div class = 'row-contact-left-informations' id = 'row-contact-left-phone'>
-                    <span class = "header" id = 'phone'>Kontakt telefoniczny</span>
-                    <p><a href = "tel:+48605342428"><span id = 'phone-icon'><fa  icon = 'phone-flip' size = '1x' style = "transform: rotate(-220deg)" /></span>605 342 428</a></p>
-                </div>
-                <div class = 'row-contact-left-informations' id = 'row-contact-left-email'>
-                    <span class = 'header' id = 'email'>Kontakt mailowy</span>
-                    <p><a href = "mailto:przykładowy_email@gmail.com"><span id = 'envelope-icon'><fa icon = "envelope" size = '1x' /></span>Przykładowy_email@gmail.com</a></p>
-                </div>
-                <div class = 'row-contact-left-informations' id = 'row-contact-left-address'>
-                    <span class = 'header' id = 'address'>Adres gabinetu</span>
-                    <p><span id = 'location-icon'><fa icon = 'location-dot'></fa></span>Katowice ul. Teatralna 6 Lokal 3</p>
+                <div id = "row-contact-right">
+                    <ContactForm />
                 </div>
             </div>
-            <div id = "row-contact-right">
-                <ContactForm />
+            <div id = "contact-map">
+                <Map />
             </div>
         </div>
-        <div id = "contact-map">
-            <Map />
-        </div>
-    </div>
+    </main>
 </template>
 <style>
 #row-contact{

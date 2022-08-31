@@ -1,9 +1,9 @@
 <template>
-    <div id = "footer">
+    <footer id = "footer">
         <div id = 'footer-top-cont'>
             <div id = 'col-1' class = 'col'>
                 <div id = 'logo'>
-                    LOGO
+                    <router-link to ='/'><fa icon = 'house' /></router-link>
                 </div>
                 <div id = 'company-name'>
                     Nazwa firmy
@@ -37,9 +37,9 @@
             </div>
         </div>
         <div id = 'footer-bottom-cont'>
-            Polityka prywatności
+            <router-link to ='/Polityka-Prywatnosci'>Polityka prywatności</router-link>
         </div>
-    </div>
+    </footer>
 </template>
 
 <style>
@@ -47,7 +47,7 @@
         background-color: rgb(31, 29, 29);
         width: 100%;
         font-size: 15px;
-        min-width: 260px;
+        min-width:280px;
         padding-top: 35px;
         margin-top: 50px;
         color: white;

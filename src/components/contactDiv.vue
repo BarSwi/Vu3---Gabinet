@@ -3,10 +3,10 @@
 import Map from './map.vue';
 </script>
 <template>
-    <subH2>Kontakt i Lokalizacja</subH2>
+    <subH2>Kontakt i lokalizacja</subH2>
     <div class = 'container-main'>
         <div id = "contact-div-informations">
-            <p>Jeżeli chcesz nas o coś zapytać możesz zadzwonić, wysłać SMS, wiadomość e-mail lub bezpośrednio zadać pytanie bezpośrednio poprzez formularz kontaktowy znajdujący się na stronie. Na wszystko postaramy się odpowiedzieć tak szybko, jak to tylko będzie możliwe.</p>
+            <p>Jeżeli chcesz nas o coś zapytać możesz zadzwonić, wysłać SMS, wiadomość e-mail lub zadać pytanie bezpośrednio poprzez formularz kontaktowy znajdujący się na stronie. Na wszystko postaramy się odpowiedzieć tak szybko, jak to tylko będzie możliwe.</p>
             <div id = "contact-div-informations-provide">
                 <ul>
                     <div class = 'contact-div-informations-item' id = 'contact-div-informations-phone'><a href = "tel:+48605342428"><span id = 'contact-div-informations-phone-icon'><fa  icon = 'phone-flip' size = '1x' style = "transform: rotate(-220deg)" /></span>605 342 428</a></div>

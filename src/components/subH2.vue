@@ -1,6 +1,6 @@
 <template>
     <h2>
-    <span id = 'h2-text'>
+    <span id = 'h2-text' :class = "{'font-change': fontChange}">
       <slot></slot>
     </span>
 
@@ -10,9 +10,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap');
 h2{
     font-family: 'Lobster Two', sans-serif;
+
     text-align:center;
     display: block;
     -webkit-user-select: none;
+    min-width:280px;
     user-select: none;
     margin: 50px 0 50px 0;
     color: transparent;
@@ -21,6 +23,9 @@ h2{
     width: 100%;
     position: relative;
     font-size: 3rem;
+}
+.font-change{
+    font-family: 'Roboto', sans-serif !important;
 }
 #h2-text{
     background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
@@ -38,5 +43,6 @@ h2{
 <script>
     export default{
         name:   'subH2',
+        props: ['fontChange']
     }
 </script>

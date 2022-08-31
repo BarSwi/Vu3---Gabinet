@@ -1,6 +1,6 @@
 <template>
     <div id = "contact-href-wrap">
-        <router-link to =  "/Kontakt"  id = "contact-href"><fa icon = 'rectangle-list' size = '1x'  id = 'svg-envelope'></fa><span class = 'text'>Zadaj pytanie</span></router-link>
+        <router-link to =  "/Kontakt"  id = "contact-href"><fa class = 'envelope-icon' icon = 'rectangle-list' size = '1x'  id = 'svg-envelope'></fa><span class = 'text'>Zadaj pytanie</span></router-link>
     </div>
 </template>
 
@@ -31,6 +31,10 @@
     @media (max-width: 500px){
         #contact-href .text{
             display: none;
+
+        }
+        #contact-href .envelope-icon{
+            margin: 0 5px 0 5px;
         }
     }
 

@@ -1,14 +1,15 @@
 <script setup>
     import navbarBottom from './navbarBottom.vue'
     import mobileNavbar from './mobileNavbar.vue'
+import FontSizeChange from './fontSizeChange.vue';
 </script>
 <template>
     <div id = "navbar">
         <div id="navbar_cont">
             <div id="logo">
-                LOGO
+                <router-link to ='/' ><fa icon = 'house' size = '2x' color = 'black' ></fa></router-link>
             </div>
-            <div id = "right_navbar_cont">
+            <nav id = "right_navbar_cont">
                 <div id="links-not-mobile">
                     <ul>
                         <li v-for="(item, index) in Paths">
@@ -22,7 +23,7 @@
                 <button @click = "toggleMobileMenuFunc" id="mobile-burger-menu" aria-label = "Open mobile menu">
                     <fa icon = "bars" color = '#097969' size = '4x'/>
                 </button>
-            </div>
+            </nav>
         </div>
     </div>
     <navbarBottom :scrollValue = "scrollValue" />
@@ -34,9 +35,12 @@
 #links-not-mobile, #navbar_cont #logo{
     float: left;
 }
+#navbar_cont #logo a:hover, #navbar_cont #logo a:focus{
+    outline: none;
+}
 #links-not-mobile{
     height: max-content;
-    padding: 13px 5px 13px 5px;
+    padding: 13px 5px 15px 5px;
 }
 #links-not-mobile li{
     
@@ -45,7 +49,9 @@
     font-size: 38px;
     font-weight: 900;
     height: max-content;
-    padding: 10px;
+}
+#logo{
+    font-size: 30px !important;
 }
 a{
     text-decoration: none;
@@ -64,7 +70,7 @@ a{
 #navbar{
     width: 100vw;
     max-width:100%;
-    min-width:260px;
+    min-width:280px;
     -webkit-box-shadow: 0px 0px 6px 1px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px 0px 6px 1px rgba(66, 68, 90, 1);
     box-shadow: 0px 0px 6px 1px rgba(66, 68, 90, 1);
@@ -138,7 +144,7 @@ a{
 #mobile-burger-menu{
     display: none;
     position: absolute;
-    top: 16px;
+    top: 13px;
     background-color: transparent;
     border: none;
     right: 12px;
@@ -173,6 +179,15 @@ a{
     }
     #navbar_cont{
         width: 100%;
+        padding-bottom: 23px;
+    }
+    #logo a{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    #logo{
+        position: relative;
+        top: 7px;
     }
 }
 }

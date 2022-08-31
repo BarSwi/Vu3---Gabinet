@@ -43,7 +43,6 @@ export default {
   destroyed(){
       window.removeEventListener('scroll', this.windowScroll)
   },
-
   methods: {
     windowScroll(){
       this.windowScrollValue = window.scrollY

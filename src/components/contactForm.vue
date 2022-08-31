@@ -7,7 +7,7 @@
     <form id = "send-message-form">
         <div id = 'send-message-form-input-name' class = 'input-box'>
             <input id = 'fullName' type = 'text' class = 'input' placeholder = ' ' required v-model = 'nameInput'  />
-            <label for = 'fullName' class = 'label'>Imię i nazwisko</label>
+            <label for = 'fullName' class = 'label'>Imię i nazwisko <span class = 'required'>*</span></label>
         </div>
         <div id = 'send-message-form-input-email' class = 'input-box'>
             <input id = 'emailAddress' type = 'email' class = 'input' placeholder = ' ' required />
@@ -19,7 +19,7 @@
         </div>
         <div id = 'send-messagea-form-input-message' class = 'input-box'>
             <textarea required  id = 'message' class = 'input' placeholder = ' ' v-model = 'messageInput' ></textarea>
-            <label for =  'message' class = 'label'>Treść wiadomości</label>
+            <label for =  'message' class = 'label'>Treść wiadomości <span class = 'required'>*</span></label>
         </div>
         <div id = "send-message-form-checkbox" class = 'input-box'>
             <label id = 'send-message-form-checkbox-label' tabindex = '0'>
@@ -95,7 +95,7 @@
     #send-message-form .input:not(#tel):valid{
         border: 1px solid #50c038;
     }
-    #send-message-form .input:not(#tel):valid + .label{
+    #send-message-form .input:not(#tel):valid + .label,  #send-message-form .input:not(#tel):valid + .label .required{
         color: #50c038;
     }
     #send-message-form .input:not(:placeholder-shown):focus:invalid{

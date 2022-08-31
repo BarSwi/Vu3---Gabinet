@@ -4,12 +4,25 @@ import Home from '../views/Home.vue'
 import Services from '../views/Services.vue'
 import Contact from '../views/Contact.vue'
 import Appointment from '../views/Appointment.vue'
+import privateLaw from '../views/privateLaw.vue'
+
+
 const router = createRouter({
   scrollBehavior(to, from, savedPosition) { 
+    if(to.params.scrollTo){
       return {
+        top: to.params.top,
+        el: to.params.scrollTo,
+        behavior: 'smooth',
+      }
+    }
+    else{
+      return{
         top: 0,
         behavior: 'smooth',
       }
+    }
+
   },
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -53,6 +66,14 @@ const router = createRouter({
       title: 'Gabinet "Dobre Słowo" - Umów wizytę'
     }
   },
+  {
+    path: '/Polityka-Prywatnosci',
+    name: 'privateLaw',
+    component: privateLaw,
+    meta:{
+      title: 'Gabinet "Dobre Słowo" - Polityka Prywatności'
+    }
+  }
 
   ]
 })

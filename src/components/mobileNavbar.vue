@@ -4,9 +4,9 @@
     import FontSizeChange from './fontSizeChange.vue';
 </script>
 <template>
-    <div :class = "mobileMenuShown ? 'shown' : 'hiden'" id = "mobile-nav-wrap">
+    <nav :class = "mobileMenuShown ? 'shown' : 'hiden'" id = "mobile-nav-wrap">
         <div id = "mobile-nav-logo">
-            <span id = 'text'>LOGO</span>
+            <!-- <span id = 'text'>LOGO</span> -->
             <button @click = "$emit('closeMenu')" id = "close-mobile-menu">
                 <fa icon = "xmark" size = '6x' color = 'white'></fa>
             </button>
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-    </div>
+    </nav>
 </template>
 <style>
     #mobile-nav-wrap{
@@ -37,7 +37,7 @@
         background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
         width: 100vw;
         max-width: 100%;
-        min-width: 260px;
+        min-width: 280px;
         color: white;
         transition: opacity .25s ease, transform .25s ease;
         align-items: center;
@@ -51,7 +51,7 @@
     }
     #close-mobile-menu{
         position: absolute;
-        top: 9px;
+        top: 16px;
         right: 10px;
         background-color: transparent;
         border: none;
@@ -117,12 +117,12 @@
         pointer-events: none;
         letter-spacing: 3px;
     }
-    @media (min-width: 990px){
+    /* @media (min-width: 990px){
     #mobile-nav-wrap{
         display: none;
     }
 
-}
+} */
 </style>
 <script>
     export default {
