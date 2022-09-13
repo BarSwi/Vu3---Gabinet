@@ -16,7 +16,7 @@
             <div id="navbar-bottom-toggle">
 
             </div>
-            <button v-if = "!hideBottomNavbar" aria-label = 'Hide bottom menu' @click = "bottomNavbarToggle" id = 'hide-bottom-menu'><fa icon = 'circle-up' size ='2x' color = '#0b440b'></fa></button>
+            <button v-if = "!hideBottomNavbar" aria-label = 'Hide bottom menu' @click = "bottomNavbarToggle" id = 'hide-bottom-menu'><fa icon = 'circle-up' size ='2x' color = '#0b440b '></fa></button>
         </nav>  
         <button v-if = "hideBottomNavbar" @click = "bottomNavbarToggle"  id = "show-bottom-menu" aria-label = 'Show bottom menu'><fa icon = 'circle-down' size = '2x' color = 'white'></fa></button>
 </template>
@@ -29,9 +29,9 @@
         transition: transform .2s ease, opacity .2s ease;
         transform-origin: top;
         display: block;
-        -webkit-box-shadow: 0px 0px 5px 1px var(--basic-dark-green);
-        -moz-box-shadow: 0px 0px 5px 1px var(--basic-dark-green);
-        box-shadow: 0px 0px 5px 1px var(--basic-dark-green);
+        -webkit-box-shadow: 0px 0px 5px 1px var(--basic-dark-green-2);
+        -moz-box-shadow: 0px 0px 5px 1px var(--basic-dark-green-2);
+        box-shadow: 0px 0px 5px 1px var(--basic-dark-green-2);
         position: sticky;
         z-index: 15;
         top: 87px;

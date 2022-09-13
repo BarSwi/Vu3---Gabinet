@@ -10,17 +10,14 @@
             <div id = "row-contact">
                 <div id = "row-contact-left">
                     <div class = "row-contact-left-informations" id = "row-contact-left-company">
-                        <span class = 'header' id = "company-name">Nazwa firmy</span>
+                        <span class = 'header' id = "company-name">GABINET "Dobre Słowo"</span>
                         <ul>
                             <li>
-                                NIP:
+                                NIP: 9490197947
                             </li>
                             <li>
-                                REGON:
-                            </li>
-                            <li>
-                                KRS: 
-                            </li>
+                                REGON: 522203785
+                            </li>   
                         </ul>
                     </div>
                     <div class = "row-contact-left-informations" id = "row-contact-left-company">
@@ -33,7 +30,7 @@
                     </div>
                     <div class = 'row-contact-left-informations' id = 'row-contact-left-email'>
                         <span class = 'header' id = 'email'>Kontakt mailowy</span>
-                        <p><a href = "mailto:przykładowy_email@gmail.com"><span id = 'envelope-icon'><fa icon = "envelope" size = '1x' /></span>Przykładowy_email@gmail.com</a></p>
+                        <p><a href = "mailto:gabinet.dobreslowo.jk@gmail.com"><span id = 'envelope-icon'><fa icon = "envelope" size = '1x' /></span>gabinet.dobreslowo.jk@gmail.com</a></p>
                     </div>
                     <div class = 'row-contact-left-informations' id = 'row-contact-left-address'>
                         <span class = 'header' id = 'address'>Adres gabinetu</span>
@@ -84,6 +81,29 @@
 .row-contact-left-informations #phone-icon, .row-contact-left-informations #envelope-icon, .row-contact-left-informations #location-icon{      
     margin-right: 10px;
 }
+
+element.style {
+}
+#send-message-form .input:not(#tel):valid {
+    border: 1px solid #50c038;
+}
+#send-message-form .input {
+    display: block;
+    height: 55px;
+    border: 1px solid grey;
+    z-index: 1;
+    font-size: 18px;
+    border-radius: 2px;
+    background-color: transparent;
+    position: relative;
+    padding: 15px;
+    width: 100%;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
 @media (max-width: 900px){
     #row-contact{
         flex-direction: column;

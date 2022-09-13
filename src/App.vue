@@ -48,10 +48,6 @@ export default {
       this.windowScrollValue = window.scrollY
     }
   }
-    // Global variable call
-    // mounted: function(){
-    //   console.log(this.$hostname)
-    // }
 }
 
 </script>

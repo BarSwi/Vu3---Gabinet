@@ -16,7 +16,7 @@ h2{
     -webkit-user-select: none;
     min-width:280px;
     user-select: none;
-    margin: 50px 0 50px 0;
+    margin: 30px 0 50px 0;
     color: transparent;
     padding: 20px 0 20px 0;
     background-color: rgba(38, 146, 28, 0.1);

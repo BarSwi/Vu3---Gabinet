@@ -1,17 +1,9 @@
 <script setup>
     import phoneNumber from './phoneNumber.vue'
     import contactHref from './contactHref.vue'
-    import FontSizeChange from './fontSizeChange.vue';
 </script>
 <template>
     <nav :class = "mobileMenuShown ? 'shown' : 'hiden'" id = "mobile-nav-wrap">
-        <div id = "mobile-nav-logo">
-            <!-- <span id = 'text'>LOGO</span> -->
-            <button @click = "$emit('closeMenu')" id = "close-mobile-menu">
-                <fa icon = "xmark" size = '6x' color = 'white'></fa>
-            </button>
-            <!-- <FontSizeChange :isMobile = true /> -->
-        </div>
         <div id = "mobile-links-wrap">
                     <ul>
                         <li v-for="(item, index) in Paths">
@@ -34,7 +26,7 @@
 <style>
     #mobile-nav-wrap{
         overflow: auto;
-        background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
+        background-image:  linear-gradient(to left, var(--basic-dark-green), var(--basic-dark-green-3));
         width: 100vw;
         max-width: 100%;
         min-width: 280px;
@@ -44,15 +36,13 @@
         letter-spacing: 1px;
         position: fixed;
         z-index: 500;
-        top: 0;
+        top: 87.5px;
         left: 0;
-        height: 100%;
         
     }
     #close-mobile-menu{
-        position: absolute;
-        top: 16px;
-        right: 10px;
+        margin: auto;
+        display: block;
         background-color: transparent;
         border: none;
     }
@@ -62,8 +52,6 @@
         cursor: pointer;
     }
     #mobile-bottom-wrap{
-        margin-top: 60px;
-        padding-top: 40px;
         -webkit-box-shadow: 0px -1px 1px 0px  white;
         -moz-box-shadow: 0px -1px 1px 0px  white;
         box-shadow: 0px -1px 1px 0px white;
@@ -80,17 +68,18 @@
         position: relative;
     }
     #mobile-links-wrap{
-        margin: 70px auto 70px auto;
-        height: 370px;
+        margin: 20px auto 20px auto;
     }
     #mobile-links-wrap ul{
         text-align: center;
+        margin: 0 20px 0 20px;
+        flex-wrap: wrap;
+        justify-content: space-around;
         font-size: 22px;
-        padding: 45px;
     }
-    #mobile-links-wrap ul li:not(:last-of-type){
-        margin-bottom: 25px;
-        padding-bottom: 5px;
+    #mobile-links-wrap ul li{
+       padding: 10px;
+    
     }
     #mobile-links-wrap ul a:focus, #mobile-links-wrap ul a:hover, #mobile-links-wrap ul a:active{
         outline: none;
@@ -106,6 +95,9 @@
         text-align: center;    
         font-size: 16px;
     }
+    #mobile-bottom-wrap{
+        padding-top: 30px;
+    }
     #mobile-href-wrap{
         display: flex;
         margin-bottom: 20px;
@@ -117,19 +109,19 @@
         pointer-events: none;
         letter-spacing: 3px;
     }
-    /* @media (min-width: 990px){
+    @media (min-width: 1008px){
     #mobile-nav-wrap{
         display: none;
     }
 
-} */
+}
 </style>
 <script>
     export default {
         name: 'MobileNavbar',
         data(){
             return{
-                Paths: [{path: '/', name: 'Home', span: 'Strona Główna'}, {path: '/Uslugi', name: 'Services', span: 'Usługi'}, {path: '/Cennik', name: 'Price', span: 'Cennik'}, {path: '/Kontakt', name: 'Contact', span: 'Kontakt'}, {path: 'Umow-Wizyte', name: 'Appointment', span: 'Umów Wizytę'}],
+                Paths: [{path: '/', name: 'Home', span: 'Strona Główna'}, {path: '/Uslugi', name: 'Services', span: 'Usługi'}, {path: '/Cennik', name: 'Price', span: 'Cennik'}, {path: '/Kontakt', name: 'Contact', span: 'Kontakt'}],
             }
         },
         props: ['mobileMenuShown'],

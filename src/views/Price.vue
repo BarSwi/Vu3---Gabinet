@@ -1,9 +1,5 @@
 <script setup>
-    import { createDOMCompilerError } from '@vue/compiler-dom';
-import { stringify } from 'postcss';
 import subH2 from '../components/subH2.vue'
-import ContactDiv from '../components/contactDiv.vue';
-import SubH2 from '../components/subH2.vue';
 </script>
 <template>
     <main>
@@ -34,9 +30,6 @@ import SubH2 from '../components/subH2.vue';
                 </tbody>
             </table>
         </div>
-        <!-- <p id = "detective-services-price">
-            <a href = "https://agencja-contra.pl/cennik/" target = "_blank">CENNIK USŁUG DETEKTYWISTYCZNYCH</a> 
-        </p> -->
         <p id = "price-disclaimer">
            * Cena analizy i pomocy w postepowaniu, może się różnić w zależności od ilości zebranych materiałow - akt postępowania.
         </p>
@@ -69,7 +62,6 @@ import SubH2 from '../components/subH2.vue';
 
 
     </div>
-    <!-- <ContactDiv /> -->
     </main>
 </template>
 
@@ -109,7 +101,6 @@ import SubH2 from '../components/subH2.vue';
         text-align: left;
         height: 80px;
         max-width: 30%;
-        /* vertical-align: center; */
         padding: 0.1rem 30px 0.1rem 30px;
     }
     .price tr td:not(:first-of-type), th:not(:first-of-type){
@@ -154,10 +145,6 @@ import SubH2 from '../components/subH2.vue';
         .price td, th:not(:first-of-type){
             width: 20%;
         }
-        /* .price td:first-of-type{
-            width: 35%;
-            padding-right: 5%;
-        } */
     }
 
 </style>

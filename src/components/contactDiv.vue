@@ -10,7 +10,7 @@ import Map from './map.vue';
             <div id = "contact-div-informations-provide">
                 <ul>
                     <div class = 'contact-div-informations-item' id = 'contact-div-informations-phone'><a href = "tel:+48605342428"><span id = 'contact-div-informations-phone-icon'><fa  icon = 'phone-flip' size = '1x' style = "transform: rotate(-220deg)" /></span>605 342 428</a></div>
-                    <div class = 'contact-div-informations-item' id = "contact-div-informations-email"><a href = "mailto:przykładowy_email@gmail.com"><span id = 'contact-div-informations-envelope-icon'><fa icon = "envelope" size = '1x' /></span>Przykładowy_email@gmail.com</a></div>
+                    <div class = 'contact-div-informations-item' id = "contact-div-informations-email"><a href = "mailto:gabinet.dobreslowo.jk@gmail.com"><span id = 'contact-div-informations-envelope-icon'><fa icon = "envelope" size = '1x' /></span>gabinet.dobreslowo.jk@gmail.com</a></div>
                     <div class = 'contact-div-informations-item' id = "contact-div-informations-form"><router-link to ='/Kontakt'><span id = 'contact-div-informations-form-icon'><fa  icon = 'rectangle-list' /></span>Formularz Kontaktowy</router-link></div>
                     <div class = "contact-div-informations-item" id = 'contact-div-informations-location'><span id = 'contact-div-informations-location-icon'><fa icon = 'location-dot' ></fa></span>Katowice ul. Teatralna 6/3</div>
                 </ul>
@@ -62,11 +62,6 @@ import Map from './map.vue';
     .contact-div-informations-item{
         padding-top: 15px;
     }
-    /* @media (max-width: 590px){
-        #contact-div-informations p {
-            text-align: left;
-        }
-    } */
 </style>
 <script>
 

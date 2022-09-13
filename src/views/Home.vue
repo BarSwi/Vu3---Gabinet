@@ -1,5 +1,4 @@
 <script setup>
-import { createDOMCompilerError } from '@vue/compiler-dom';
 import subH2 from '../components/subH2.vue'
 import SubH2 from '../components/subH2.vue';
 import ContactDiv from '../components/contactDiv.vue';
@@ -15,7 +14,7 @@ import ContactDiv from '../components/contactDiv.vue';
             <div id = 'home-services-wrap'>
                 <div class = 'home-services-square'>
                     <router-link :to="{name: 'Services', params: {scrollTo: '#services-wrap', top: 100}}">
-                        <div class = 'home-services-square-img' style = "background-image: url('/img/słowo.jpg');" >
+                        <div class = 'home-services-square-img' style = "background-image: url('/img/slowo.jpg');" >
                             
                         </div>
                         <div class = 'home-services-square-text' id = 'therapy'>
@@ -93,7 +92,8 @@ import ContactDiv from '../components/contactDiv.vue';
     margin-top: 10px;
     background-image: url('/img/1.jpg');
     background-size: cover;
-    transition: background-image .7s ease-in-out;
+    transition: all .7s ease-in-out;
+    -webkit-transition: all .7s ease-in-out;
     background-repeat: no-repeat;
   text-shadow:
    -1px -1px 0 #000,  
@@ -125,7 +125,7 @@ import ContactDiv from '../components/contactDiv.vue';
     justify-content: center;
     min-width: 260px;
     flex-direction: row;
-    margin: 50px 0 150px 0;
+    margin: 50px 0 50px 0;
 }
 .home-services-square{
     width: 380px;
@@ -241,7 +241,9 @@ import ContactDiv from '../components/contactDiv.vue';
         methods:{
             changeImg(){
                 setInterval(() => {
-                        if(document.hasFocus()) this.currentImg = (this.currentImg + 1) % this.images.length
+                        if(document.hasFocus()){
+                            this.currentImg = (this.currentImg + 1) % this.images.length
+                        } 
                 }, 5000);
             },
             preloadImg(){

@@ -3,7 +3,6 @@ import Price from '../views/Price.vue'
 import Home from '../views/Home.vue'
 import Services from '../views/Services.vue'
 import Contact from '../views/Contact.vue'
-import Appointment from '../views/Appointment.vue'
 import privateLaw from '../views/privateLaw.vue'
 
 
@@ -56,14 +55,6 @@ const router = createRouter({
     component: Contact,
     meta: {
       title: 'Gabinet "Dobre Słowo" - Kontakt'
-    }
-  },
-  {
-    path: '/Umow-Wizyte',
-    name: 'Appointment',
-    component: Appointment,
-    meta: {
-      title: 'Gabinet "Dobre Słowo" - Umów wizytę'
     }
   },
   {

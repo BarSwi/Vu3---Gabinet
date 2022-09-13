@@ -46,19 +46,10 @@ import ContactDiv from '../components/contactDiv.vue';
         min-width: 270px;
     }
     #services-wrap p{
-        /* border-left: 3px solid var(--basic-dark-green);
-        border-right: 3px solid var(--basic-dark-green); */
-        /* border-bottom: 3px solid var(--basic-dark-green); */
         text-align: center;
-        /* -webkit-box-shadow: 0px 0px 3px 0px rgba(66, 68, 90, 1);
-        -moz-box-shadow: 0px 0px 3px 0px rgba(66, 68, 90, 1);
-        box-shadow: 0px 0px 3px 0px var(--basic-dark-green-2); */
     }
-    #services-wrap .service:nth-of-type(odd){
-        /* background-color: rgba(15, 87, 8, 0.1); */
-    }
+
     #services-wrap .service{
-        /* border-bottom: 5px solid var(--basic-dark-green); */
         padding: 0.5rem;
         -webkit-box-shadow: inset 0px 0px 3px 0px rgba(66, 68, 90, 1);
         border-radius: 15px;
@@ -71,7 +62,8 @@ import ContactDiv from '../components/contactDiv.vue';
     }
     #services-wrap .service a{
         display: block;
-        margin: 10px;
+        margin: 10px auto 10px auto;
+        width: max-content;
         color: var(--basic-dark-green-2);
         font-weight: 900;
         opacity: 80%;
@@ -94,9 +86,5 @@ import ContactDiv from '../components/contactDiv.vue';
     }
 </style>
 <script>
-    // export default {
-    //     mounted(){
-    //         console.log(this.$route.params.id)
-    //     }
-    // }
+
 </script>

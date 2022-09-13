@@ -2,9 +2,6 @@
 <div v-if = "!isMobile" id = "font_change_wrap">
     <input type = "range" min = '18' max = '24' v-model="fontSize" class = 'slider' id = "font_change_slider" />
 </div>
-<!-- <div v-if="isMobile" id = "font-change-wrap-mobile">
-    <input type = "range" min = '18' max = '24' v-model="fontSize" class = 'slider' id = "font-change-slider-mobile" />
-</div> -->
 </template>
 <style>
     #font_change_wrap{
@@ -26,7 +23,7 @@
     appearance: none;
     width: 100%;
     height: 25px; 
-    background: var(--basic-dark-green-3); 
+    background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
     outline: none; 
     -webkit-transition: .2s;
     transition: opacity .2s ease;
@@ -36,14 +33,14 @@
     appearance: none;
     width: 7px; 
     height: 11px; 
-    background: var(--basic-dark-green-2);
+    background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
     cursor: pointer; 
     }
 
     .slider::-moz-range-thumb {
     width: 10px; 
     height: 10px;
-    background: var(--basic-dark-green-2);
+    background-image:  linear-gradient(to left, var(--basic-dark-green-2), var(--basic-dark-green));
     cursor: pointer; 
     }
     .slider{

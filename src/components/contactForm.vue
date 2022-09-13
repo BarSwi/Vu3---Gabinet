@@ -1,20 +1,20 @@
 
 <template>
-    <div id = "contact-header">
+    <div v-if = "axiosRes != '1'" id = "contact-header">
         <h3>Masz pytanie?</h3>
         <p>Możesz nam je zadać używając formularza poniżej i postaramy się odpowiedzieć tak szybko jak to możliwe.</p>
     </div>
-    <form id = "send-message-form">
+    <form v-if="axiosRes != '1'" @submit.prevent = "sendEmail" id = "send-message-form">
         <div id = 'send-message-form-input-name' class = 'input-box'>
             <input id = 'fullName' type = 'text' class = 'input' placeholder = ' ' required v-model = 'nameInput'  />
             <label for = 'fullName' class = 'label'>Imię i nazwisko <span class = 'required'>*</span></label>
         </div>
         <div id = 'send-message-form-input-email' class = 'input-box'>
-            <input id = 'emailAddress' type = 'email' class = 'input' placeholder = ' ' required />
+            <input id = 'emailAddress' type = 'email' class = 'input' v-model = 'emailInput' placeholder = ' ' required />
             <label for = 'emailAddress' class = 'label'>Adres e-mail <span class = 'required'>*</span></label>
         </div>
         <div id = 'send-message-form-input-phone' class = 'input-box'>
-            <input id = 'tel' type = 'tel' class = 'input' placeholder = ' '/>
+            <input :class = "{ invalid: !phoneNumberValidation }" id = 'tel' type = 'tel' class = 'input' v-model = 'phoneInput' placeholder = ' '/>
             <label for = 'tel' class = 'label'>Numer telefonu (Niewymagane)</label>
         </div>
         <div id = 'send-messagea-form-input-message' class = 'input-box'>
@@ -23,21 +23,34 @@
         </div>
         <div id = "send-message-form-checkbox" class = 'input-box'>
             <label id = 'send-message-form-checkbox-label' tabindex = '0'>
-                <input type = 'checkbox' id = 'legal-check' required  />
+                <input type = 'checkbox' id = 'legal-check' v-model = 'checkboxChecked' required  />
                 <span @click = 'checkedFunc'>Wysyłając pytanie wyrażam dobrowolną zgodę na przetwarzanie moich danych osobowych przez NAZWA FIRMY z siedzibą w XYZ (kod-pocztowy), KRS XXXXXXXXXX, NIP XXX-XXX-XX-XX, REGON XXXXXXXXX</span>
             </label>
+        </div>
+        <div v-if ="axiosRes == '2'" id = 'contact-error-message'>
+            Coś poszło nie tak, prosimy spróbować później.
         </div>
         <div id = 'send-message-form-button-wrap' class = 'input-box'>
             <button id = 'send-message-form-button' :disabled = !enableBtn >Wyślij zapytanie</button>
         </div>
-
     </form>
+    <div v-if="axiosRes == '1'" id = 'contact-success'>
+        <h1>Dziękujemy za skontaktowanie się z nami, postaramy się odpowiedzieć tak szybko, jak to tylko możliwe.</h1>
+    </div>
 </template>
 <style>
     #send-message-form .required{
         position: relative;
         bottom: 2px;
         color: red;
+    }
+    #contact-success{
+        text-align: center;
+    }
+    #contact-error-message{
+        text-align: center;
+        color: red;
+        font-weight: 900;
     }
     #contact-header{
         padding: 0 0 5px 10px;
@@ -102,6 +115,12 @@
         border: 1px solid red;
     }
     #send-message-form .input:not(:placeholder-shown):focus:invalid + .label{
+        color: red;
+    }
+    .invalid{
+        border: 1px solid red !important;
+    }
+    .invalid + .label{
         color: red;
     }
     #send-message-form textarea{
@@ -193,26 +212,49 @@
     }
 </style>
 <script>
-import { faTurkishLiraSign } from '@fortawesome/free-solid-svg-icons';
 
+import { faTemperature0 } from '@fortawesome/free-solid-svg-icons'
+import axios from 'axios'
 export default {
     data(){
         return{
             nameInput: '',
-            emailValidate: true,
             messageInput: '',
-            checked: false
+            emailInput: '',
+            phoneInput: '',
+            axiosRes: '',
+            checkboxChecked: false,
         }
     },
     methods:{
         checkedFunc(){
             this.checked = !this.checked
+        },
+        async sendEmail(){
+            this.enableBtn = false
+            axios.post('/phpscripts/sendEmail.php', {name: this.nameInput, email: this.emailInput, phone: this.phoneInput, message: this.messageInput, checkbox: this.checkboxChecked})
+            .then((res) => {    
+                this.axiosRes = res.data
+                if(res.data =='2'){
+                    this.nameInput = ''
+                    this.messageInput = ''
+                    this.emailInput = ''
+                    this.phoneInput = ''
+                    this.checkboxChecked = false
+                }
+            })
         }
     },
     computed: {
         enableBtn() {
-            return this.checked == true && this.emailValidate==true && this.nameInput.length > 2 && this.messageInput.length > 1 ? true : false
-        }
+            return !isNaN(this.phoneInput) && this.checkboxChecked == true &&  this.nameInput.length > 0 && this.messageInput.length > 0 ? true : false
+        },
+        phoneNumberValidation(){
+            if(isNaN(this.phoneInput) && this.phoneInput.length){
+                return false;
+            }
+            else return true;
+        },
     }
 }
 </script>

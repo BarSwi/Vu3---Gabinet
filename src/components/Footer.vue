@@ -6,12 +6,11 @@
                     <router-link to ='/'><fa icon = 'house' /></router-link>
                 </div>
                 <div id = 'company-name'>
-                    Nazwa firmy
+                    GABINET "Dobre Słowo"
                 </div>
                 <div id = 'company-informations'>
-                    <p>NIP: XXXXXXXXXXX</p>
-                    <p>REGON: XXXXXXXXXXX</p>
-                    <p>KRS: XXXXXXXXXX</p>
+                    <p>NIP: 9490197947</p>
+                    <p>REGON: 522203785</p>
                 </div>
             </div>
             <div id = 'col-2' class = 'col'>
@@ -68,6 +67,9 @@
         margin-bottom: 15px;
         display: block;
     }
+    #company-informations p{
+        padding: 3px 0 3px 0;
+    }
     #footer-top-cont #time-header{
         margin-top: 15px;
     }
@@ -85,7 +87,7 @@
         text-align: center;
         transition: .2s ease;
     }
-    #footer ul li:hover, #footer ul li:focus{
+    #footer ul li a:hover, #footer ul li a:focus{
         color: var(--basic-light-green);
     }
     #footer ul li:not(:last-of-type){
@@ -103,12 +105,17 @@
     #footer #col-2, #footer #col-1{
         text-align: center;
     }
+    #footer #col-3
+    {
+        margin-top: 40px;
+    }
     #footer #address{
         margin-bottom: 20px;
     }
     #footer #col-1 #logo, #footer #col-1 #company-name{
         margin-bottom: 35px;
-        /* text-align: left; */
+        padding-left: 7px;
+        font-weight: 900;
     }
     #footer-top-cont #contact{
         margin-top: 25px;
@@ -119,7 +126,7 @@
         display: block;
         margin-top: 20px;
     }
-    #footer-top-cont #contact-form:hover, #footer-top-cont #contact-form:focus, #footer-top-cont #contact-phone:hover, #footer-top-cont #contact-form:focus{
+    #footer-top-cont #contact-form a:hover, #footer-top-cont #contact-form a:focus, #footer-top-cont #contact-phone a:hover, #footer-top-cont #contact-form a:focus{
         color: var(--basic-light-green);
     }
     #footer-contact-phone-icon, #footer-contact-envelope-icon   {
@@ -201,7 +208,7 @@
 export default {
     data(){
         return{
-            Paths: [{path: '/', name: 'Home', span: 'Strona Główna'}, {path: '/Uslugi', name: 'Services', span: 'Usługi'}, {path: '/Cennik', name: 'Price', span: 'Cennik'}, {path: '/Kontakt', name: 'Contact', span: 'Kontakt'}, {path: '/Umow-Wizyte', name: 'Appointment', span: 'Umów Wizytę'}],
+            Paths: [{path: '/', name: 'Home', span: 'Strona Główna'}, {path: '/Uslugi', name: 'Services', span: 'Usługi'}, {path: '/Cennik', name: 'Price', span: 'Cennik'}, {path: '/Kontakt', name: 'Contact', span: 'Kontakt'}],
         }
     },
 }
