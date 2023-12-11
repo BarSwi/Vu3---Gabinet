@@ -1,29 +1,13 @@
-# Psychologia
+# Project Overview:
 
-This template should help get you started developing with Vue 3 in Vite.
+This repository showcases my first commercial project for a client, where I developed and managed a comprehensive website for an office providing a diverse range of services. In addition to website development, I took charge of hosting responsibilities.
 
-## Recommended IDE Setup
+## Key Achievements:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Web Development Skills: Acquired proficiency in essential web development skills, including semantic HTML, Responsive Web Design, and Vue.js. These technologies were instrumental in creating a dynamic and user-friendly website.
 
-## Customize configuration
+SEO Expertise: Implemented Search Engine Optimization (SEO) strategies to enhance the website's visibility and improve its ranking on search engines, ensuring optimal online presence for the client.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Web Security: Gained valuable insights into web security practices, ensuring the implementation of robust security measures to protect user data and maintain the integrity of the website.
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Challenges of Website Hosting: Overcame challenges related to website hosting, demonstrating adaptability and problem-solving skills to ensure seamless website performance and accessibility.
